@@ -141,6 +141,9 @@ webserver.response("Broadcast message")
 
 # 排除某些客户端
 webserver.response("Private message", socket_id_blacklist={67890})
+
+# 回复给特定的客户端，逻辑为 socket_id_whitelist - socket_id_blacklist
+webserver.response("Private message", socket_id_whitelist={123,456,789}, socket_id_blacklist={456}) #只有ws_id为123和789的客户端会收到消息推送
 ```
 
 ---
