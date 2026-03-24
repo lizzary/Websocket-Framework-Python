@@ -53,10 +53,13 @@ webserver = PluginContext.webserver
 def on_greet(event):
     """
     监听前端发送的 "greet" 事件
-    该事件结构：
+    一个标准的前端事件结构如下：
     {
-        "name": "Alice",
-        "ws_id": 12345
+        "event": "greet",
+        "data": {
+            "name":"Bob",
+            "ws_id": 12345
+        }
     }
     """
 
