@@ -53,12 +53,14 @@ webserver = PluginContext.webserver
 def on_greet(event):
     """
     监听前端发送的 "greet" 事件
-    event.getData() 包含前端发送的 data 字段，例如：
+    该事件结构：
     {
         "name": "Alice",
         "ws_id": 12345
     }
     """
+
+    #从event中获取需要的信息
     data = event.getData()
     name = data.get("name", "Guest")
     ws_id = data.get("ws_id")
